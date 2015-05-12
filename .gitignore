@@ -1,0 +1,11 @@
+*/CMakeCache*
+*/CMakeFiles/
+*/*.cmake
+*/Makefile
+*/*.o
+
+*/*.tex
+*/*.vtk
+*/app-mpi
+*/app-serial
+*/app
