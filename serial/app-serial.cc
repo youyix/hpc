@@ -1,24 +1,3 @@
-/* ---------------------------------------------------------------------
- *
- * Copyright (C) 2000 - 2013 by the deal.II authors
- *
- * This file is part of the deal.II library.
- *
- * The deal.II library is free software; you can use it, redistribute
- * it, and/or modify it under the terms of the GNU Lesser General
- * Public License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- * The full text of the license can be found in the file LICENSE at
- * the top level of the deal.II distribution.
- *
- * ---------------------------------------------------------------------
-
- *
- * Author: Wolfgang Bangerth and Ralf Hartmann, University of Heidelberg, 2000
- */
-
-
-
 #include <deal.II/base/quadrature_lib.h>
 #include <deal.II/base/function.h>
 #include <deal.II/base/logstream.h>
@@ -514,7 +493,7 @@ namespace App
     // Mark Nueman Boundaries to `1`, which will not be changed by D Condition
     {
         GridGenerator::hyper_cube (triangulation, -1, 1);
-        triangulation.refine_global (3);
+        triangulation.refine_global (1);
 
         typename Triangulation<dim>::cell_iterator
         cell = triangulation.begin (),
@@ -528,7 +507,7 @@ namespace App
                 (std::fabs(cell->face(face_number)->center()(1) - (-1)) < 1e-12))
               cell->face(face_number)->set_boundary_indicator (1);
     }
-    for ( int i=0; i<5; i++ ) {
+    for ( int i=0; i<4; i++ ) {
         refine_grid ();
     }
     setup_system ();

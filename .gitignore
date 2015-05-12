@@ -6,6 +6,9 @@
 
 */*.tex
 */*.vtk
+*/*.gmv
 */app-mpi
 */app-serial
 */app
+*/step-8
+*/step-17

@@ -1,23 +1,3 @@
-/* ---------------------------------------------------------------------
- *
- * Copyright (C) 2000 - 2013 by the deal.II authors
- *
- * This file is part of the deal.II library.
- *
- * The deal.II library is free software; you can use it, redistribute
- * it, and/or modify it under the terms of the GNU Lesser General
- * Public License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- * The full text of the license can be found in the file LICENSE at
- * the top level of the deal.II distribution.
- *
- * ---------------------------------------------------------------------
-
- *
- * Author: Wolfgang Bangerth and Ralf Hartmann, University of Heidelberg, 2000
- */
-
-
 
 #include <deal.II/base/quadrature_lib.h>
 #include <deal.II/base/function.h>
@@ -634,10 +614,11 @@ int main (int argc, char *argv[])
       using namespace dealii;
       using namespace AppMpi;
 
+      Utilities::MPI::MPI_InitFinalize mpi_initialization(argc, argv, 1);
       deallog.depth_console (0);
       {
         HelmholtzProblem<dim> helmholtz_problem_2d;
-        // helmholtz_problem_2d.run ();
+        helmholtz_problem_2d.run ();
       }
     }
   catch (std::exception &exc)
